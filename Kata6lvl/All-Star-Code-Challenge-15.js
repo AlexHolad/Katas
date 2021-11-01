@@ -11,3 +11,12 @@ const rotate = (str) => {
 };
 
 console.log(rotate("Hello")); // => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
+
+
+
+
+
+
+
+
+

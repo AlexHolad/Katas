@@ -19,6 +19,7 @@ const waterbombs = (fire, w) => {
   return waterBomb;
 };
 
-console.log(waterbombs("xxxxYxx", 4));
+console.log(waterbombs("xxxxxxxxxxxxxxxxxYxx", 4));
 
-
+counter = 2;
+waterBomb = 2;

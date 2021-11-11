@@ -1,12 +1,17 @@
-const findLongest = (str) => {
-  const spl = str.split(" ");
-  let longest = 0;
-  for (let i = 0; i < spl.length; i++) {
-    if (spl[i].length > longest) {
-      longest = spl[i].length;
-    }
-  }
-  return longest;
-};
+function alphabetPosition(text) {
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  const alphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
+  console.log(alphabet);
+  let result = [];
+  text
+    .toLowerCase()
+    .split("")
+    .forEach((char, i) => {
+      result.push(alphabet.indexOf(char) + 1);
+    });
+  result = result.filter((el) => el !== 0);
 
-console.log(findLongest("The quick white fox jumped around the massive dog"))
+  return result.join(" ");
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));

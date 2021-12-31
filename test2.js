@@ -1,1 +1,21 @@
-console.log(+[6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3].reduce((a, b) => a + b, ''))
+const isValid = (s) => {
+    
+
+let strArr=s.split('')
+// console.log(strArr)
+ let arr=['(', ')', '[', ']', '{', '}']
+ for(let i=0; i<strArr.length; i++){
+     if(strArr.includes('(') && strArr.includes(')')){
+         strArr.splice(i,1)
+     }
+//    console.log(s)
+//    if(arr.some(brackets => s.includes(brackets))){
+//      // strArr.splice(i,1)
+//      s = s.replace('()', '')
+//      s = s.replace('[]', '')
+//      s = s.replace('{}', '')
+   } 
+ return strArr
+}
+//  return s.length > 0 ? false : true
+console.log(isValid("(([]){})"))

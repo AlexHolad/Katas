@@ -1,21 +1,25 @@
-const isValid = (s) => {
-    
+const romanToInt = (s) => {
+  const integerEcv = {
+    "M": 1000,
+    "D": 500,
+    "C": 100,
+    "L": 50,
+    "X": 10,
+    "V": 5,
+    "I": 1,
+};
+  const arrOfStr = s.split('')  
+  let total = 0
+       
+for(let i = 0; i < arrOfStr.length; i++){
+   if(integerEcv[arrOfStr[i]] < integerEcv[arrOfStr[i+1]]){
+    total -= integerEcv[arrOfStr[i]]   
+   } else {
+    total += integerEcv[arrOfStr[i]]
+   }  
+ }
 
-let strArr=s.split('')
-// console.log(strArr)
- let arr=['(', ')', '[', ']', '{', '}']
- for(let i=0; i<strArr.length; i++){
-     if(strArr.includes('(') && strArr.includes(')')){
-         strArr.splice(i,1)
-     }
-//    console.log(s)
-//    if(arr.some(brackets => s.includes(brackets))){
-//      // strArr.splice(i,1)
-//      s = s.replace('()', '')
-//      s = s.replace('[]', '')
-//      s = s.replace('{}', '')
-   } 
- return strArr
-}
-//  return s.length > 0 ? false : true
-console.log(isValid("(([]){})"))
+  return total
+};
+
+console.log(romanToInt("MCMXCIV"));

@@ -4,10 +4,11 @@ const queryObjectify = (str) => {
   let res = {};
   str = str.split("&");
   str = str.map((i) => i.split("."));
+  console.log(str)
   for (let i = 0; i < str.length; i++) {
     let cur = res;
     for (let key = 0; key < str[i].length; key++) {
-      let name = str[i][key];
+      let name = str[i][key]; // [ 'user', 'name', 'firstname=Bob' ],
       if (key == str[i].length - 1) {
         name = name.split("=");
         cur[name[0]] = decodeURIComponent(name[1]);

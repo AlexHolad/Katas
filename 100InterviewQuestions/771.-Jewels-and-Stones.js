@@ -18,3 +18,12 @@ const numJewelsInStones = (jewels, stones) => {
 
 console.log(numJewelsInStones("aA", "aAAbbbb"));
 // console.log(numJewelsInStones("z", "ZZ"));
+
+
+let counter = 0;
+  
+for (let i = 0; i < stones.length; i++) {
+  if (jewels.includes(stones[i])) counter++;
+}
+
+return counter;

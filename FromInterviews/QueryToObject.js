@@ -3,7 +3,9 @@ const inData = "user.name.firstname=Bob&user.name.lastname=Smith&user.favoriteco
 const queryObjectify = (str) => {
   let res = {};
   str = str.split("&");
+
   str = str.map((i) => i.split("."));
+
   console.log(str)
   for (let i = 0; i < str.length; i++) {
     let cur = res;

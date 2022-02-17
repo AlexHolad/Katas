@@ -1,35 +1,31 @@
 const findJudge = (n, trust) => {
- if(n === 1 && trust.length === 0){
-     return 1
- }
+  if (n === 1 && trust.length === 0) {
+    return 1;
+  }
 
- let trusters = {}
- let possibleJudges = {}
- 
- for(let i = 0; i < trust.length; i ++){
-     if(!trusters[trust[i][0]]){
-        trusters[trust[i][0]] = trust[i][0]
-     }
+  let trusters = {};
+  let possibleJudges = {};
 
-     if(!possibleJudges[trust[i][1]]){
-        possibleJudges[trust[i][1]] = 1
-     } else {
-        possibleJudges[trust[i][1]]++
-     }
- }
- console.log(trusters, possibleJudges)
+  for (let i = 0; i < trust.length; i++) {
+    if (!trusters[trust[i][0]]) {
+      trusters[trust[i][0]] = trust[i][0];
+    }
 
- for(const property in possibleJudges){
-     if(possibleJudges[property] === n -1 && !trusters[property]){
-         return property
-     }
- }
+    if (!possibleJudges[trust[i][1]]) {
+      possibleJudges[trust[i][1]] = 1;
+    } else {
+      possibleJudges[trust[i][1]]++;
+    }
+  }
 
- return -1
+  for (const property in possibleJudges) {
+    if (possibleJudges[property] === n - 1 && !trusters[property]) {
+      return property;
+    }
+  }
+
+  return -1;
 };
-
-
-
 
 console.log(
   findJudge(4, [
